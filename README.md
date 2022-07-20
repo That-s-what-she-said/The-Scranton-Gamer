@@ -75,7 +75,7 @@ This section should list any major frameworks/libraries used to bootstrap your p
       Fans of the popular show, The Office, can now find video games based on the personality of their favorite character!
 
 
-## A.  Commitments as a project team:
+## Commitments as a project team:
 
   * Keep other team members informed and transfer knowledge to others when applicable.
   * Focus on what is best for the project as a whole.
