@@ -56,9 +56,37 @@ This section should list any major frameworks/libraries used to bootstrap your p
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+## Members and Roles:
 
+* Albert Bautista (back-end:HTML/javascript/api)
+* Angel Escobar (back-end:HTML/javascript/api)
+* Luis Jimenez (front-end: html/css/wireframes)
+* Nick Chirico (front-end: html/css/wireframes)
+
+
+## Project Name: The Scranton Gamer
+* Github Repo : https://github.com/That-s-what-she-said 
+* Wireframe : https://whimsical.com/PfDWPqcd7xEEyB3detKmBv 
+* Presentation : 
+
+
+## The Pitch:
+
+      Fans of the popular show, The Office, can now find video games based on the personality of their favorite character!
+
+
+## Commitments as a project team:
+
+  * Keep other team members informed and transfer knowledge to others when applicable.
+  * Focus on what is best for the project as a whole.
+  * Give everyone the opportunity for equal participation (draw out introverts and balance extroverts).
+  * Be open to new approaches and listen to new ideas.
+  * Get input from the entire team before a decision is made. If this isn’t feasible, at least get input from key people.
+  * Attack problems or issues – not the person. When at a roadblock, console.log(math.random…)
+
+## Things to Consider (If time allows):
+
+ * Animation (Hover)
 
 <!-- USAGE EXAMPLES -->
 ## Usage
@@ -78,9 +106,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - [ ] Add Working Agreement
 - [ ] Add Additional Templates w/ Examples
 - [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
+
 
 See the [open issues](https://github.com/That-s-what-she-said/The-Scranton-Gamer/issues) for a full list of proposed features (and known issues).
 
