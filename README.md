@@ -11,20 +11,7 @@
 
   <h3 align="center">The Scranton Gamer</h3>
 
-  <p align="center">
-    Fans of the popular tv show, The Office, can now find video games based on the personality of their favorite character!
-    <br />
-    <a href=""><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="">View Demo</a>
-    ·
-    <a href="https://github.com/That-s-what-she-said/The-Scranton-Gamer/issues">Report Bug</a>
-    ·
-    <a href="https://whimsical.com/PfDWPqcd7xEEyB3detKmBv">Wireframe</a>
-    ·
-    <a href="https://github.com/That-s-what-she-said/The-Scranton-Gamer/issues">Presentation</a>
-  </p>
+  
 </div>
 
 <!-- ABOUT THE PROJECT -->
@@ -54,7 +41,6 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 
 <!-- GETTING STARTED -->
-## Getting Started
 
 ## Members and Roles:
 
@@ -72,8 +58,11 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 ## The Pitch:
 
+<div align="center">
+
       Fans of the popular show, The Office, can now find video games based on the personality of their favorite character!
 
+</div>
 
 ## Commitments as a project team:
 
@@ -87,11 +76,21 @@ This section should list any major frameworks/libraries used to bootstrap your p
 ## Things to Consider (If time allows):
 
  * Animation (Hover)
+ * Add some Flare
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+*Character List:*
+
+* Michael Scott
+* Jim Halpert
+* Dwight Schrute
+* Stanley Hudson
+* Angela Martin
+* Pam Beasly
+* Kelly Kapoor
+* Meredith Palmer
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
