@@ -9,7 +9,7 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">The Scranton Gamer</h3>
+  <h3 align="center"><a href="https://that-s-what-she-said.github.io/The-Scranton-Gamer/">The Scranton Gamer</a></h3>
 
   
 </div>
