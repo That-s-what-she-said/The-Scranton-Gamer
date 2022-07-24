@@ -1,0 +1,12 @@
+.hide {
+    display: none;
+}
+
+h1 {
+    font-family: 'Rampart One', cursive;
+}
+
+h2,
+button {
+    font-family: 'Press Start 2P', cursive;
+}

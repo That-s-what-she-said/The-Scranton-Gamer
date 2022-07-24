@@ -4,27 +4,65 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rampart+One&display=swap" rel="stylesheet">
     <title>The Scranton Gamer</title>
 </head>
 <body>
-    <nav classs>
-        <h1 class="block box title is-1 has-text-centered">The Scranton Gamer</h1>
+    <nav class="box has-text-centered">
+        <h1 class="block title is-1 has-text-centered">The Scranton Gamer</h1>
+        <h2>Select a Character for a Videogame Recommendetation</h2>
     </nav>
     <main>
-        <section id="list-characters" class="section is-medium">
-                <figure class="image is-128x128">
-                    <img class="image is-rounded" src="./assets/img/Michael Scott.webp" alt="Michael Scott">
-                    <img class="image is-rounded" src="./assets/img/Angela.jpeg" alt="Angela">
-                    <img class="image is-rounded" src="./assets/img/Jim.jpeg" alt="Jim">
-                    <img class="image is-rounded" src="./assets/img/Pam.jpeg" alt="Pam">
-                    <img class="image is-rounded" src="./assets/img/Dwight.jpeg" alt="Dwight">
-                    <img class="image is-rounded" src="./assets/img/Kelly.jpeg" alt="Kelly">
-                    <img class="image is-rounded" src="./assets/img/Stanley.jpeg" alt="Stanley">
-                    <img class="image is-rounded" src="./assets/img/Jan.jpeg" alt="Jan">
-                </figure>
+        <section id="list-characters" class="section">
+            <div class="columns is-multiline">
+                <div class="column is-one-quarter">
+                    <figure class="image is-128x128">
+                        <img class="image is-rounded" src="./assets/img/Michael Scott.webp" alt="Michael Scott">
+                    </figure>
+                </div>
+                <div class="column is-one-quarter">
+                    <figure class="image is-128x128 ">
+                        <img class="image is-rounded" src="./assets/img/Angela.jpeg" alt="Angela">
+                    </figure>
+                </div>
+                <div class="column is-one-quarter">
+                    <figure class="image is-128x128">
+                        <img class="image is-rounded" src="./assets/img/Jim.jpeg" alt="Jim">
+                    </figure>
+                </div>
+                <div class="column is-one-quarter">
+                    <figure class="image is-128x128">
+                        <img class="image is-rounded" src="./assets/img/Pam.jpeg" alt="Pam">
+                    </figure>
+                </div>
+                <div class="column is-one-quarter">
+                    <figure class="image is-128x128">
+                        <img class="image is-rounded" src="./assets/img/Dwight.jpeg" alt="Dwight">
+                    </figure>
+                </div>
+                <div class="column is-one-quarter">
+                    <figure class="image is-128x128">
+                        <img class="image is-rounded" src="./assets/img/Kelly.jpeg" alt="Kelly">
+                    </figure>
+                </div>
+                <div class="column is-one-quarter">
+                    <figure class="image is-128x128">
+                        <img class="image is-rounded" src="./assets/img/Stanley.jpeg" alt="Stanley">
+                    </figure>
+                </div>
+                <div class="column is-one-quarter">
+                    <figure class="image is-128x128">
+                        <img class="image is-rounded" src="./assets/img/Jan.jpeg" alt="Jan">
+                    </figure>
+                </div>
+            </div>
         </section>
         <div>
             <section id="character-big-image">
@@ -37,11 +75,11 @@
                 </div>
             </aside>
         </div>   
-        <section>
-            <button id="back" class="hide"></button>                      
-            <button id="random-character"></button>
+        <section class="box has-text-centered">
+            <button id="back" class="hide button medium">Back</button>                      
+            <button id="random-character" class="button medium">Random Character</button>
         </section>
-        <section id="saved-videogames">
+        <section id="saved-videogames" class="box hide">
             <ul>
             </ul>
         </section>
