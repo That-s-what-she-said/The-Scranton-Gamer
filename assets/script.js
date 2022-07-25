@@ -2,61 +2,73 @@
 var charArray = [
     {
         name: "Michael",
+        fname: "Michael Scott",
         gameIndex : "office-management-101",
-        genreIndex : "strategy,simulation"
+        genreIndex : "casual,sports"
     },
     {
         name: "Jan",
+        fname: "Jan Levinson",
         gameIndex : "just-dance-2022",
         genreIndex : "rpg,action"
     },
     {
         name: "Dwight",
+        fname: "Dwight Schrute",
         gameIndex : "stardew-valley",
         genreIndex : "rpg,simulation"
     },
     {
         name: "Angela",
+        fname: "Angela Martin",
         gameIndex : "stray-2",
         genreIndex : "simulation,indie"
     },
     {
         name: "Jim",
+        fname: "Jim Halpert",
         gameIndex : "rocket-league",
         genreIndex : "sports,family"
     },
     {
         name: "Pam",
+        fname: "Pam Beesly",
         gameIndex : "fall-guys",
         genreIndex : "family,casual"
     },
     {
         name: "Ryan",
+        fname: "Ryan Howard",
         gameIndex : "stardew-valley",
         genreIndex : "rpg,simulation"
     },
     {
         name: "Kelly",
+        fname: "Kelly Kapoor",
         gameIndex : "stray-2",
         genreIndex : "simulation,indie"
     },
     {
         name: "Stanley",
+        fname: "Stanley Hudson", 
         gameIndex : "untitled-goose-game",
         genreIndex : "puzzle,family"
     },
     {
         name: "Phyllis",
+        fname: "Phyllis Lapis",
         gameIndex : "the-sims-4",
         genreIndex : "simulation,casual"
     },
     {
         name: "Oscar",
+        fname: "Oscar Martinez",
         gameIndex : "stardew-valley",
         genreIndex : "rpg,simulation"
     },
     {
         name: "Meredith",
+        fname: "Meredith Palmer",
         gameIndex : "stray-2",
         genreIndex : "simulation,indie"
     },
@@ -94,14 +106,19 @@ function getSimilargames(genreIndex){
         })
 }
 
-function changeImage(text) 
-{
-  document.images["charSelectImg"].src = "./assets/img/"+text+"-lg.jpg";
+function changeImage(text) {
+    $("#char-image").attr("src","./assets/img/"+text+"-lg.jpg")
 }
 
-function changeImageBack() 
-{
-  document.images["charSelectImg"].src = "";
+function changeImageBack() {
+    $("#char-image").attr("src","")
+}
+
+function charDetails(text){
+    $("#char-fullname").empty()
+    $("#char-games").empty()
+    $("#char-fullname").append($("<h2></h2>").text(text))
+    $("#char-fullname").append($("<p></p>").text('"This is a line reserved for a quote."'))
 }
 
 $("#back")
@@ -115,92 +132,128 @@ $("#random-character")
         $("#list-characters").hide("slow")
         $("#back").show(200)
         var randNum = Math.floor(Math.random()*charArray.length)
-        document.images["charSelectImg"].src = "./assets/img/"+charArray[randNum].name+"-lg.jpg";
+        $("#char-image").attr("src","./assets/img/"+charArray[randNum].name+"-lg.jpg")
     })
 
 $("#michael")
     .on("click", function (){
         $("#list-characters").hide("slow")
         $("#back").show(200)
-        var funcVal = "michael"
-        changeImage(funcVal)
+        var charIndex = charArray.findIndex(x => x.name ==="Michael")
+        changeImage(charArray[charIndex].name)
+        charDetails(charArray[charIndex].fname)
+        getInitgame(charArray[charIndex].gameIndex)
+        getSimilargames(charArray[charIndex].genreIndex)        
     })
 $("#jan")
 .on("click", function (){
     $("#list-characters").hide("slow")
     $("#back").show(200)
-    var funcVal = "jan"
-    changeImage(funcVal)
+    var charIndex = charArray.findIndex(x => x.name ==="Jan")
+    changeImage(charArray[charIndex].name)
+    charDetails(charArray[charIndex].fname)
+    getInitgame(charArray[charIndex].gameIndex)
+    getSimilargames(charArray[charIndex].genreIndex)        
 })
 $("#dwight")
     .on("click", function (){
         $("#list-characters").hide("slow")
         $("#back").show(200)
-        var funcVal = "dwight"
-        changeImage(funcVal)
+        var charIndex = charArray.findIndex(x => x.name ==="Dwight")
+        changeImage(charArray[charIndex].name)
+        charDetails(charArray[charIndex].fname)
+        getInitgame(charArray[charIndex].gameIndex)
+        getSimilargames(charArray[charIndex].genreIndex)        
     })
 
 $("#angela")
 .on("click", function (){
     $("#list-characters").hide("slow")
     $("#back").show(200)
-    var funcVal = "angela"
-    changeImage(funcVal)
+    var charIndex = charArray.findIndex(x => x.name ==="Angela")
+    changeImage(charArray[charIndex].name)
+    charDetails(charArray[charIndex].fname)
+    getInitgame(charArray[charIndex].gameIndex)
+    getSimilargames(charArray[charIndex].genreIndex)        
 })
 $("#jim")
     .on("click", function (){
         $("#list-characters").hide("slow")
         $("#back").show(200)
-        var funcVal = "jim"
-        changeImage(funcVal)
+        var charIndex = charArray.findIndex(x => x.name ==="Jim")
+        changeImage(charArray[charIndex].name)
+        charDetails(charArray[charIndex].fname)
+        getInitgame(charArray[charIndex].gameIndex)
+        getSimilargames(charArray[charIndex].genreIndex)        
     })
 $("#pam")
 .on("click", function (){
     $("#list-characters").hide("slow")
     $("#back").show(200)
-    var funcVal = "pam"
-    changeImage(funcVal)
+    var charIndex = charArray.findIndex(x => x.name ==="Pam")
+    changeImage(charArray[charIndex].name)
+    charDetails(charArray[charIndex].fname)
+    getInitgame(charArray[charIndex].gameIndex)
+    getSimilargames(charArray[charIndex].genreIndex)        
 })
 $("#ryan")
     .on("click", function (){
         $("#list-characters").hide("slow")
         $("#back").show(200)
-        var funcVal = "ryan"
-        changeImage(funcVal)
+        var charIndex = charArray.findIndex(x => x.name ==="Ryan")
+        changeImage(charArray[charIndex].name)
+        charDetails(charArray[charIndex].fname)
+        getInitgame(charArray[charIndex].gameIndex)
+        getSimilargames(charArray[charIndex].genreIndex)        
     })
 $("#kelly")
 .on("click", function (){
     $("#list-characters").hide("slow")
     $("#back").show(200)
-    var funcVal = "kelly"
-    changeImage(funcVal)
+    var charIndex = charArray.findIndex(x => x.name ==="Kelly")
+    changeImage(charArray[charIndex].name)
+    charDetails(charArray[charIndex].fname)
+    getInitgame(charArray[charIndex].gameIndex)
+    getSimilargames(charArray[charIndex].genreIndex)        
 })
 $("#stanley")
     .on("click", function (){
         $("#list-characters").hide("slow")
         $("#back").show(200)
-        var funcVal = "stanley"
-        changeImage(funcVal)
+        var charIndex = charArray.findIndex(x => x.name ==="Stanley")
+        changeImage(charArray[charIndex].name)
+        charDetails(charArray[charIndex].fname)
+        getInitgame(charArray[charIndex].gameIndex)
+        getSimilargames(charArray[charIndex].genreIndex)        
     })
 $("#phyllis")
-.on("click", function (){
-    $("#list-characters").hide("slow")
-    $("#back").show(200)
-    var funcVal = "phyllis"
-    changeImage(funcVal)
-})
+    .on("click", function (){
+        $("#list-characters").hide("slow")
+        $("#back").show(200)
+        var charIndex = charArray.findIndex(x => x.name ==="Phyllis")
+        changeImage(charArray[charIndex].name)
+        charDetails(charArray[charIndex].fname)
+        getInitgame(charArray[charIndex].gameIndex)
+        getSimilargames(charArray[charIndex].genreIndex)    
+    })
 $("#oscar")
     .on("click", function (){
         $("#list-characters").hide("slow")
         $("#back").show(200)
-        var funcVal = "oscar"
-        changeImage(funcVal)
+        var charIndex = charArray.findIndex(x => x.name ==="Oscar")
+        changeImage(charArray[charIndex].name)
+        charDetails(charArray[charIndex].fname)
+        getInitgame(charArray[charIndex].gameIndex)
+        getSimilargames(charArray[charIndex].genreIndex)    
     })
 $("#meredith")
 .on("click", function (){
     $("#list-characters").hide("slow")
     $("#back").show(200)
-    var funcVal = "meredith"
-    changeImage(funcVal)
+    var charIndex = charArray.findIndex(x => x.name ==="Meredith")
+    changeImage(charArray[charIndex].name)
+    charDetails(charArray[charIndex].fname)
+    getInitgame(charArray[charIndex].gameIndex)
+    getSimilargames(charArray[charIndex].genreIndex) 
 })
 
