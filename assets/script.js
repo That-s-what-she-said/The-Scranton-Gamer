@@ -11,16 +11,6 @@ var charArray = [
         genreIndex : "rpg,action"
     },
     {
-        name: "Jim",
-        gameIndex : "rocket-league",
-        genreIndex : "sports,family"
-    },
-    {
-        name: "Pam",
-        gameIndex : "fall-guys",
-        genreIndex : "family,casual"
-    },
-    {
         name: "Dwight",
         gameIndex : "stardew-valley",
         genreIndex : "rpg,simulation"
@@ -31,16 +21,50 @@ var charArray = [
         genreIndex : "simulation,indie"
     },
     {
+        name: "Jim",
+        gameIndex : "rocket-league",
+        genreIndex : "sports,family"
+    },
+    {
+        name: "Pam",
+        gameIndex : "fall-guys",
+        genreIndex : "family,casual"
+    },
+    {
+        name: "Ryan",
+        gameIndex : "stardew-valley",
+        genreIndex : "rpg,simulation"
+    },
+    {
+        name: "Kelly",
+        gameIndex : "stray-2",
+        genreIndex : "simulation,indie"
+    },
+    {
         name: "Stanley",
         gameIndex : "untitled-goose-game",
         genreIndex : "puzzle,family"
     },
     {
-        name: "Kelly",
+        name: "Phyllis",
         gameIndex : "the-sims-4",
         genreIndex : "simulation,casual"
     },
+    {
+        name: "Oscar",
+        gameIndex : "stardew-valley",
+        genreIndex : "rpg,simulation"
+    },
+    {
+        name: "Meredith",
+        gameIndex : "stray-2",
+        genreIndex : "simulation,indie"
+    },
 ]
+// console.log(charArray)
+// for (x=0;x < charArray.length;x++){
+//     console.log(charArray[x].name)
+// }
 
 function getInitgame(charIndex){
     // Pull First Game
@@ -69,4 +93,114 @@ function getSimilargames(genreIndex){
             }    
         })
 }
+
+function changeImage(text) 
+{
+  document.images["charSelectImg"].src = "./assets/img/"+text+"-lg.jpg";
+}
+
+function changeImageBack() 
+{
+  document.images["charSelectImg"].src = "";
+}
+
+$("#back")
+    .on("click", function(){
+        $("#back").hide("fast")
+        $("#list-characters").show("slow")
+        changeImageBack()
+    })
+$("#random-character")
+    .on("click", function(){
+        $("#list-characters").hide("slow")
+        $("#back").show(200)
+        var randNum = Math.floor(Math.random()*charArray.length)
+        document.images["charSelectImg"].src = "./assets/img/"+charArray[randNum].name+"-lg.jpg";
+    })
+
+$("#michael")
+    .on("click", function (){
+        $("#list-characters").hide("slow")
+        $("#back").show(200)
+        var funcVal = "michael"
+        changeImage(funcVal)
+    })
+$("#jan")
+.on("click", function (){
+    $("#list-characters").hide("slow")
+    $("#back").show(200)
+    var funcVal = "jan"
+    changeImage(funcVal)
+})
+$("#dwight")
+    .on("click", function (){
+        $("#list-characters").hide("slow")
+        $("#back").show(200)
+        var funcVal = "dwight"
+        changeImage(funcVal)
+    })
+
+$("#angela")
+.on("click", function (){
+    $("#list-characters").hide("slow")
+    $("#back").show(200)
+    var funcVal = "angela"
+    changeImage(funcVal)
+})
+$("#jim")
+    .on("click", function (){
+        $("#list-characters").hide("slow")
+        $("#back").show(200)
+        var funcVal = "jim"
+        changeImage(funcVal)
+    })
+$("#pam")
+.on("click", function (){
+    $("#list-characters").hide("slow")
+    $("#back").show(200)
+    var funcVal = "pam"
+    changeImage(funcVal)
+})
+$("#ryan")
+    .on("click", function (){
+        $("#list-characters").hide("slow")
+        $("#back").show(200)
+        var funcVal = "ryan"
+        changeImage(funcVal)
+    })
+$("#kelly")
+.on("click", function (){
+    $("#list-characters").hide("slow")
+    $("#back").show(200)
+    var funcVal = "kelly"
+    changeImage(funcVal)
+})
+$("#stanley")
+    .on("click", function (){
+        $("#list-characters").hide("slow")
+        $("#back").show(200)
+        var funcVal = "stanley"
+        changeImage(funcVal)
+    })
+$("#phyllis")
+.on("click", function (){
+    $("#list-characters").hide("slow")
+    $("#back").show(200)
+    var funcVal = "phyllis"
+    changeImage(funcVal)
+})
+$("#oscar")
+    .on("click", function (){
+        $("#list-characters").hide("slow")
+        $("#back").show(200)
+        var funcVal = "oscar"
+        changeImage(funcVal)
+    })
+$("#meredith")
+.on("click", function (){
+    $("#list-characters").hide("slow")
+    $("#back").show(200)
+    var funcVal = "meredith"
+    changeImage(funcVal)
+})
 

@@ -20,53 +20,78 @@
         <h2>Select a Character for a Videogame Recommendetation</h2>
     </nav>
     <main>
+        
         <section id="list-characters" class="section">
-            <div class="columns is-multiline">
+            <div id="imgDiv" class="columns is-multiline">
                 <div class="column is-one-quarter">
                     <figure class="image is-128x128">
-                        <img class="image is-rounded" src="./assets/img/Michael Scott.webp" alt="Michael Scott">
+                        <img class="image is-rounded" src="./assets/img/michael-sm.jpg" alt="Michael Scott" id="michael">
+                    </figure>
+                </div>
+                <div class="column is-one-quarter">
+                    <figure class="image is-128x128">
+                        <img class="image is-rounded" src="./assets/img/jan-sm.jpg" alt="Jan Levinson" id="jan">
+                    </figure>
+                </div>
+                <div class="column is-one-quarter">
+                    <figure class="image is-128x128">
+                        <img class="image is-rounded" src="./assets/img/dwight-sm.jpg" alt="Dwight Schrute" id="dwight">
                     </figure>
                 </div>
                 <div class="column is-one-quarter">
                     <figure class="image is-128x128 ">
-                        <img class="image is-rounded" src="./assets/img/Angela.jpeg" alt="Angela">
+                        <img class="image is-rounded" src="./assets/img/angela-sm.jpg" alt="Angela Martin" id="angela">
+                    </figure>
+                </div>
+                <div class="column is-one-quarter">
+                    <figure class="image is-128x128"`>
+                        <img class="image is-rounded" src="./assets/img/jim-sm.jpg" alt="Jim Halpert" id="jim">
                     </figure>
                 </div>
                 <div class="column is-one-quarter">
                     <figure class="image is-128x128">
-                        <img class="image is-rounded" src="./assets/img/Jim.jpeg" alt="Jim">
+                        <img class="image is-rounded" src="./assets/img/pam-sm.jpg" alt="Pam Beesly" id="pam">
                     </figure>
                 </div>
                 <div class="column is-one-quarter">
                     <figure class="image is-128x128">
-                        <img class="image is-rounded" src="./assets/img/Pam.jpeg" alt="Pam">
+                        <img class="image is-rounded" src="./assets/img/ryan-sm.jpg" alt="Ryan Howard" id="ryan">
                     </figure>
                 </div>
                 <div class="column is-one-quarter">
                     <figure class="image is-128x128">
-                        <img class="image is-rounded" src="./assets/img/Dwight.jpeg" alt="Dwight">
+                        <img class="image is-rounded" src="./assets/img/kelly-sm.jpg" alt="Kelly Kapoor" id="kelly">
                     </figure>
                 </div>
                 <div class="column is-one-quarter">
                     <figure class="image is-128x128">
-                        <img class="image is-rounded" src="./assets/img/Kelly.jpeg" alt="Kelly">
+                        <img class="image is-rounded" src="./assets/img/stanley-sm.jpeg" alt="Stanley Hudson" id="stanley">
                     </figure>
                 </div>
                 <div class="column is-one-quarter">
                     <figure class="image is-128x128">
-                        <img class="image is-rounded" src="./assets/img/Stanley.jpeg" alt="Stanley">
+                        <img class="image is-rounded" src="./assets/img/phyllis-sm.jpg" alt="Phyllis Vance" id="phyllis">
                     </figure>
                 </div>
                 <div class="column is-one-quarter">
                     <figure class="image is-128x128">
-                        <img class="image is-rounded" src="./assets/img/Jan.jpeg" alt="Jan">
+                        <img class="image is-rounded" src="./assets/img/oscar-sm.jpg" alt="Oscar Martinez" id="oscar">
+                    </figure>
+                </div>
+                <div class="column is-one-quarter">
+                    <figure class="image is-128x128">
+                        <img class="image is-rounded" src="./assets/img/meredith-sm.jpg" alt="Meredith Palmer" id="meredith">
                     </figure>
                 </div>
             </div>
         </section>
+        <section class="box has-text-centered">
+            <button id="back" class="hide button medium">Character List</button>                      
+            <button id="random-character" class="button medium">Random Character</button>
+        </section>
         <div>
             <section id="character-big-image">
-                <img src="" alt="">
+                <img name="charSelectImg" src="" alt="">
             </section>
             <aside id="character-info">
                 <div id="char-details"></div>
@@ -75,10 +100,7 @@
                 </div>
             </aside>
         </div>   
-        <section class="box has-text-centered">
-            <button id="back" class="hide button medium">Back</button>                      
-            <button id="random-character" class="button medium">Random Character</button>
-        </section>
+        
         <section id="saved-videogames" class="box hide">
             <ul>
             </ul>
