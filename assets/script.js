@@ -1,3 +1,5 @@
+var apiKeyInit = config.API_KEY_INITGAME
+var apiKeyDetails = config.API_KEY_DETAILS
 
 var charArray = [
     {
@@ -89,7 +91,7 @@ var charArray = [
 function getInitgame(charIndex){
     // Pull First Game
     $.ajax({
-        url:"https://api.rawg.io/api/games/" + charIndex + "?key=82f276f87ec44df988016fb8a6d23c76",
+        url:"https://api.rawg.io/api/games/" + charIndex + "?key=" + apiKeyInit ,
         method: "GET",
     }).then(function(results){
         console.log(results)
@@ -103,7 +105,7 @@ function getInitgame(charIndex){
 function getSimilargames(genreIndex){
         // Pull 3 Similar Games 
         $.ajax({
-            url:"https://rawg.io/api/games?page_size=3&genres=" + genreIndex + "&metacritic=80&key=82f276f87ec44df988016fb8a6d23c76",
+            url:"https://rawg.io/api/games?page_size=3&genres=" + genreIndex + "&metacritic=80&key=" + apiKeyInit,
             method: "GET",
         }).then(function(gamelist){
             console.log(gamelist.results)
@@ -116,7 +118,7 @@ function getSimilargames(genreIndex){
 
 function getDetails(castID){
     $.ajax({
-        url:"https://api.themoviedb.org/3/person/" + castID + "?api_key=cd2339f965f5a11b2ea2c94d76b2b76f&language=en-US",
+        url:"https://api.themoviedb.org/3/person/" + castID + "?api_key=" + apiKeyDetails + "&language=en-US",
         method: "GET",
     }).then(function(results){
         console.log(results)
