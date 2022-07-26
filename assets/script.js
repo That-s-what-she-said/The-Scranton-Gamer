@@ -1,87 +1,87 @@
 
 var charArray = [
     {
-        name: "Michael",
+        name: "michael",
         fname: "Michael Scott",
-        gameIndex : "office-management-101",
-        genreIndex : "casual,action",
+        gameIndex : "tropico-5",
+        genreIndex : "strategy,simulation,rpg",
         castID: "4495"
     },
     {
-        name: "Jan",
+        name: "jan",
         fname: "Jan Levinson",
         gameIndex : "just-dance-2022",
-        genreIndex : "rpg,action",
+        genreIndex : "casual,family,rpg",
         castID: "404"
     },
     {
-        name: "Dwight",
+        name: "dwight",
         fname: "Dwight Schrute",
         gameIndex : "stardew-valley",
-        genreIndex : "rpg,action",
+        genreIndex : "rpg,simulation,indie",
         castID: "11678"
     },
     {
-        name: "Angela",
+        name: "angela",
         fname: "Angela Martin",
         gameIndex : "stray-2",
-        genreIndex : "simulation,indie",
+        genreIndex : "simulation,indie,platformer",
         castID: "113867"
     },
     {
-        name: "Jim",
+        name: "jim",
         fname: "Jim Halpert",
-        gameIndex : "rocket-league",
-        genreIndex : "sports,family",
+        gameIndex : "madden-nfl-22",
+        genreIndex : "family,casual",
         castID: "17697"
     },
     {
-        name: "Pam",
+        name: "pam",
         fname: "Pam Beesly",
         gameIndex : "fall-guys",
-        genreIndex : "family,casual",
+        genreIndex : "family,casual,indie",
         castID: "51856"
     },
     {
-        name: "Ryan",
+        name: "ryan",
         fname: "Ryan Howard",
-        gameIndex : "stardew-valley",
-        genreIndex : "rpg,simulation",
+        gameIndex : "halo-infinite",
+        genreIndex : "action,shooter,adventure",
         castID: "107770"
     },
     {
-        name: "Kelly",
+        name: "kelly",
         fname: "Kelly Kapoor",
-        gameIndex : "stray-2",
-        genreIndex : "simulation,indie",
+        gameIndex : "the-sims-4",
+        genreIndex : "simulation,casual,indie",
         castID: "125167"
     },
     {
-        name: "Stanley",
+        name: "stanley",
         fname: "Stanley Hudson", 
         gameIndex : "untitled-goose-game",
         genreIndex : "puzzle,family",
         castID: "1230842"
     },
     {
-        name: "Phyllis",
+        name: "phyllis",
         fname: "Phyllis Lapis",
         gameIndex : "the-sims-4",
-        genreIndex : "simulation,casual",
+        genreIndex : "puzzle,casual",
         castID: "169200"
     },
     {
-        name: "Oscar",
+        name: "oscar",
         fname: "Oscar Martinez",
-        gameIndex : "stardew-valley",
-        genreIndex : "rpg,simulation",
+        gameIndex : "boyfriend-dungeon",
+        genreIndex : "indie,simulation",
         castID: "76094"
     },
     {
-        name: "Meredith",
+        name: "meredith",
         fname: "Meredith Palmer",
-        gameIndex : "stray-2",
-        genreIndex : "simulation,indie",
+        gameIndex : "elden-ring",
+        genreIndex : "action,rpg,adventure",
         castID: "304282"
     },
 ]
@@ -95,7 +95,7 @@ function getInitgame(charIndex){
         console.log(results)
 
         $("<h2 id='current'>Currently Playing:</h2><br/>").insertBefore("#char-games")
-        $('#char-games').prepend("<li><p><img src='" + results.background_image + "' width='150'/><br /><h2>"+results.name+"</h2></p></li>")
+        $('#char-games').prepend("<li class='gImg'><p><img src='" + results.background_image + "' width='200px'/><br /><h2>"+results.name+"</h2></p></li>")
         
     })
 }
@@ -109,7 +109,7 @@ function getSimilargames(genreIndex){
             console.log(gamelist.results)
     
             for (var i=0; i<3; i++){
-                $('#char-games').append("<li><p><img src='" + gamelist.results[i].background_image + "' width='150'/><br /><h2>"+gamelist.results[i].name+"<h2/></p></li>")
+                $('#char-games').append("<li class='gImg'><p><img src='" + gamelist.results[i].background_image + "' width='200px'/><br /><h2>"+gamelist.results[i].name+"<h2/></p></li>")
             }    
         })
 }
@@ -187,73 +187,73 @@ function animateSection(){
 $("#michael")
     .on("click", function (){
         animateSection()
-        var charIndex = charArray.findIndex(x => x.name ==="Michael")
+        var charIndex = charArray.findIndex(x => x.name ==="michael")
         fillcharSection(charIndex)    
     })
 $("#jan")
     .on("click", function (){
         animateSection()
-        var charIndex = charArray.findIndex(x => x.name ==="Jan")
+        var charIndex = charArray.findIndex(x => x.name ==="jan")
         fillcharSection(charIndex)      
 })
 $("#dwight")
     .on("click", function (){
         animateSection()
-        var charIndex = charArray.findIndex(x => x.name ==="Dwight")
+        var charIndex = charArray.findIndex(x => x.name ==="dwight")
         fillcharSection(charIndex)
     })
 $("#angela")
     .on("click", function (){
         animateSection()
-        var charIndex = charArray.findIndex(x => x.name ==="Angela")
+        var charIndex = charArray.findIndex(x => x.name ==="angela")
         fillcharSection(charIndex)       
 })
 $("#jim")
     .on("click", function (){
         animateSection()
-        var charIndex = charArray.findIndex(x => x.name ==="Jim")
+        var charIndex = charArray.findIndex(x => x.name ==="jim")
         fillcharSection(charIndex)     
     })
 $("#pam")
     .on("click", function (){
         animateSection()
-        var charIndex = charArray.findIndex(x => x.name ==="Pam")
+        var charIndex = charArray.findIndex(x => x.name ==="pam")
         fillcharSection(charIndex)     
 })
 $("#ryan")
     .on("click", function (){
         animateSection()
-        var charIndex = charArray.findIndex(x => x.name ==="Ryan")
+        var charIndex = charArray.findIndex(x => x.name ==="ryan")
         fillcharSection(charIndex)      
     })
 $("#kelly")
     .on("click", function (){
         animateSection()
-        var charIndex = charArray.findIndex(x => x.name ==="Kelly")
+        var charIndex = charArray.findIndex(x => x.name ==="kelly")
         fillcharSection(charIndex)       
 })
 $("#stanley")
     .on("click", function (){
         animateSection()
-        var charIndex = charArray.findIndex(x => x.name ==="Stanley")
+        var charIndex = charArray.findIndex(x => x.name ==="stanley")
         fillcharSection(charIndex)       
     })
 $("#phyllis")
     .on("click", function (){
         animateSection()
-        var charIndex = charArray.findIndex(x => x.name ==="Phyllis")
+        var charIndex = charArray.findIndex(x => x.name ==="phyllis")
         fillcharSection(charIndex)  
     })
 $("#oscar")
     .on("click", function (){
         animateSection()
-        var charIndex = charArray.findIndex(x => x.name ==="Oscar")
+        var charIndex = charArray.findIndex(x => x.name ==="oscar")
         fillcharSection(charIndex) 
     })
 $("#meredith")
     .on("click", function (){
         animateSection()
-        var charIndex = charArray.findIndex(x => x.name ==="Meredith")
+        var charIndex = charArray.findIndex(x => x.name ==="meredith")
         fillcharSection(charIndex) 
 })
 
