@@ -10,3 +10,21 @@ h2,
 button {
     font-family: 'Press Start 2P', cursive;
 }
+
+#char-games{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#char-games li {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 800px) {
+    #char-games {
+      flex-direction: column;
+    }
+  }
