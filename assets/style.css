@@ -11,6 +11,10 @@ button {
     font-family: 'Press Start 2P', cursive;
 }
 
+.gImg {
+    width: 400px;
+}
+
 #char-games{
     display: flex;
     flex-direction: row;
