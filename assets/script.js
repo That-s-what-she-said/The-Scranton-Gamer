@@ -302,7 +302,9 @@ function initSavelist(){
     renderGames()
 }
 
+
 initSavelist()
+
 
 
 function storeGameslocal(){
