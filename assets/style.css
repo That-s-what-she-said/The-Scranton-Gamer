@@ -46,6 +46,14 @@ figure,
     height: 480px;
     overflow: auto;
     background-color: bisque;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: 5px;
+}
 
 @media screen and (max-width: 1000px) {
     #character-section {
