@@ -1,3 +1,4 @@
+var savedGames = []
 
 var charArray = [
     {
@@ -94,8 +95,7 @@ function getInitgame(charIndex){
     }).then(function(results){
         console.log(results)
 
-        $("<h2 id='current'>Currently Playing:</h2><br/>").insertBefore("#char-games")
-        $('#char-games').prepend("<li class='gImg'><p><img src='" + results.background_image + "' width='200px'/><br /><h2>"+results.name+"</h2></p></li>")
+        $('#char-games').prepend("<li class='gImg'><p><img class='selImg' src='" + results.background_image + "' width='200px'><br/><span>"+results.name+"</span></p></li>")
         
     })
 }
@@ -109,7 +109,7 @@ function getSimilargames(genreIndex){
             console.log(gamelist.results)
     
             for (var i=0; i<3; i++){
-                $('#char-games').append("<li class='gImg'><p><img src='" + gamelist.results[i].background_image + "' width='200px'/><br /><h2>"+gamelist.results[i].name+"<h2/></p></li>")
+                $('#char-games').append("<li class='gImg'><p><img class='selImg' src='" + gamelist.results[i].background_image + "' width='200px'><br/><span>"+gamelist.results[i].name+"</span></p></li>")
             }    
         })
 }
@@ -121,8 +121,10 @@ function getDetails(castID){
     }).then(function(results){
         console.log(results)
 
-        $("#char-details").append($("<h2></h2><br/>").text("Real Name: " + results.name))
-        $("#char-details").append($("<p></p><br/>").text(results.biography))
+        $("#char-details").append($("<h2 class='is-size-4 has-text-white'></h2>").text("Real Name: " + results.name))
+        $("#char-details").append($("<p class='box py-3'></p>").text(results.biography))
+
+        $('#current').prepend(results.name)
 
     })
 }
@@ -142,16 +144,13 @@ function changeImageBack() {
 }
 
 function charFname(text){
-    $("#char-details").append($("<h2></h2>").text(text))
-}
-
-function charRname(text){
-    $("#char-details").append($("<h2></h2>").text(text))
+    $("#char-details").append($("<h2 class='is-size-4 has-text-white'></h2>").text(text))
 }
 
 $("#back")
     .on("click", function(){
         $("#back").hide("fast")
+        $("#char-games-section").hide("fast")
         $("#list-characters").show("slow")
         changeImageBack()
         clearCharDiv()
@@ -163,14 +162,11 @@ $("#random-character")
         clearCharDiv()
         changeImageBack()
         var randNum = Math.floor(Math.random()*charArray.length)
-        changeImage(charArray[randNum].name)
-        charFname(charArray[randNum].fname)
-        getInitgame(charArray[randNum].gameIndex)
-        getSimilargames(charArray[randNum].genreIndex)
-        getDetails(charArray[randNum].castID)
+        fillcharSection(randNum)
     })
 
 function fillcharSection(charIndex){
+    $("#character-info").show("slow")
     changeImage(charArray[charIndex].name)
     charFname(charArray[charIndex].fname)
     getInitgame(charArray[charIndex].gameIndex)
@@ -182,6 +178,16 @@ function animateSection(){
     $("#list-characters").hide("slow")
     $("#back").show(200)
 }
+
+$(".selImg")
+    .mouseover(function(){
+        $(this).css('border', '3px solid red')
+        $("#charselName").text($(this).attr("alt"))
+    })
+    .mouseout(function(){
+        $(this).css('border', '')
+        $("#charselName").text("that's what she said")
+    })
 
 $("#michael")
     .on("click", function (){
@@ -256,24 +262,32 @@ $("#meredith")
         fillcharSection(charIndex) 
 })
 
-var savedGames = []
-
-
 $("#char-games").on("click", "li", function(){
-    console.log($(this))
+    console.log($(this).text())
+    console.log(savedGames)
 
     $("#saved-videogames").show(200)
-    $("#saved-list").append("<li class='column'><p><img src='"+$(this)[0].childNodes[0].childNodes[2].currentSrc +"' width='200'/><br />"+$(this).text()+"</p></li>")
-    
-    var gamesEntry = {
-        imgsrc: $(this)[0].childNodes[0].childNodes[2].currentSrc,
-        imgtext: $(this).text()
-    }
-    
-    savedGames.push(gamesEntry)
-    savedGames.sort((a, b) => {return b.imgtext-a.imgtext})
 
-    storeGameslocal()
+    var found = $.grep(savedGames, e => e.imgtext === $(this).text());
+    if (found.length > 0) {
+        console.log("Game Already Stored");
+    } else if (savedGames.length >= 5) {
+        console.log("Storage Full!")
+        $("#vgstorage-text").text("[Currently Full!]")
+    }   else {
+        $("#saved-list").append("<li class='column'><p><img src='"+$(this)[0].childNodes[0].childNodes[0].currentSrc+"' width='200'/><br /><span>"+$(this).text()+"<span></p></li>")
+    
+        var gamesEntry = {
+            imgsrc: $(this)[0].childNodes[0].childNodes[0].currentSrc,        
+            imgtext: $(this).text()
+        }
+        
+        savedGames.push(gamesEntry)
+        savedGames.sort((a, b) => {return b.imgtext-a.imgtext})
+    
+        storeGameslocal()
+    }
+
 })
 
 function renderGames(){
@@ -281,10 +295,21 @@ function renderGames(){
     $("#saved-videogames").show(200)
 
     console.log(savedGames)
-    for (var i=0; i < savedGames.length; i++){
-        var sGame = savedGames[i]
-        $("#saved-list").append("<li class='column'><p><img src='"+sGame.imgsrc+"' width='200'/><br />"+sGame.imgtext+"</p></li>")
+    if (savedGames.length < 1){
+        $("#saved-videogames").hide()
+    } else if (savedGames.length >= 5) {
+        $("#vgstorage-text").append(" [Currently Full]")
+        for (var i=0; i < savedGames.length; i++){
+            var sGame = savedGames[i]
+            $("#saved-list").append("<li class='column'><p><img src='"+sGame.imgsrc+"' width='200'/><br /><span>"+sGame.imgtext+"</span></p></li>")
+        }
+    } else {
+        for (var i=0; i < savedGames.length; i++){
+            var sGame = savedGames[i]
+            $("#saved-list").append("<li class='column'><p><img src='"+sGame.imgsrc+"' width='200'/><br /><span>"+sGame.imgtext+"</span></p></li>")
+        }
     }
+
 }
 
 function initSavelist(){
@@ -303,8 +328,7 @@ function initSavelist(){
 
 initSavelist()
 
-
-
 function storeGameslocal(){
     localStorage.setItem("storedGames", JSON.stringify(savedGames))
 }
+
