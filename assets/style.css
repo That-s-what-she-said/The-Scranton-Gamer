@@ -21,10 +21,6 @@ figure,
     cursor: crosshair;
 }
 
-/* .gImg {
-    width: 400px;
-} */
-
 #char-games-section ul {
     display: flex;
     flex-wrap: wrap;
