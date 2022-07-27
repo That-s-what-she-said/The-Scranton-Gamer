@@ -95,7 +95,7 @@ function getInitgame(charIndex){
     }).then(function(results){
         console.log(results)
 
-        $('#char-games').prepend("<li class='gImg'><p><img class='selImg' src='" + results.background_image + "' width='200px'><br/><span>"+results.name+"</span></p></li>")
+        $('#char-games').prepend("<li ><p><img class='gameImg' src='" + results.background_image + "' width='200px'><br/><span>"+results.name+"</span></p></li>")
         
     })
 }
@@ -109,7 +109,7 @@ function getSimilargames(genreIndex){
             console.log(gamelist.results)
     
             for (var i=0; i<3; i++){
-                $('#char-games').append("<li class='gImg'><p><img class='selImg' src='" + gamelist.results[i].background_image + "' width='200px'><br/><span>"+gamelist.results[i].name+"</span></p></li>")
+                $('#char-games').append("<li ><p><img class='gameImg' src='" + gamelist.results[i].background_image + "' width='200px'><br/><span>"+gamelist.results[i].name+"</span></p></li>")
             }    
         })
 }
@@ -122,21 +122,22 @@ function getDetails(castID){
         console.log(results)
 
         $("#char-details").append($("<h2 class='is-size-4 has-text-white'></h2>").text("Real Name: " + results.name))
-        $("#char-details").append($("<p class='box py-3'></p>").text(results.biography))
+        $("#char-details").append($("<p class='box py-3 mr-5'><strong>" + results.biography + "</strong></p>"))
 
-        $('#current').prepend(results.name)
+        $('#current').prepend(results.name + " Currently Plays:")
 
     })
 }
 
 function changeImage(text) {
-    $("#char-image").attr("src","./assets/img/"+text+"-lg.jpg")
+    $("#char-image").attr("src","./assets/img/"+text+"-med.jpg")
 }
 
 function clearCharDiv(){
-    $("#current").remove()
+    $("#current").empty()
     $("#char-details").empty()
     $("#char-games").empty()
+    $("#char-big-name").empty()
 }
 
 function changeImageBack() {
@@ -144,7 +145,7 @@ function changeImageBack() {
 }
 
 function charFname(text){
-    $("#char-details").append($("<h2 class='is-size-4 has-text-white'></h2>").text(text))
+    $("#char-big-name").append(text)
 }
 
 $("#back")
@@ -167,6 +168,7 @@ $("#random-character")
 
 function fillcharSection(charIndex){
     $("#character-info").show("slow")
+    $("#char-games-section").show("slow") 
     changeImage(charArray[charIndex].name)
     charFname(charArray[charIndex].fname)
     getInitgame(charArray[charIndex].gameIndex)
@@ -188,107 +190,74 @@ $(".selImg")
         $(this).css('border', '')
         $("#charselName").text("that's what she said")
     })
-
-$("#michael")
     .on("click", function (){
         animateSection()
-        var charIndex = charArray.findIndex(x => x.name ==="michael")
+        var charIndex = charArray.findIndex(x => x.name === $(this).attr("id"))
         fillcharSection(charIndex)    
     })
-$("#jan")
-    .on("click", function (){
-        animateSection()
-        var charIndex = charArray.findIndex(x => x.name ==="jan")
-        fillcharSection(charIndex)      
-})
-$("#dwight")
-    .on("click", function (){
-        animateSection()
-        var charIndex = charArray.findIndex(x => x.name ==="dwight")
-        fillcharSection(charIndex)
-    })
-$("#angela")
-    .on("click", function (){
-        animateSection()
-        var charIndex = charArray.findIndex(x => x.name ==="angela")
-        fillcharSection(charIndex)       
-})
-$("#jim")
-    .on("click", function (){
-        animateSection()
-        var charIndex = charArray.findIndex(x => x.name ==="jim")
-        fillcharSection(charIndex)     
-    })
-$("#pam")
-    .on("click", function (){
-        animateSection()
-        var charIndex = charArray.findIndex(x => x.name ==="pam")
-        fillcharSection(charIndex)     
-})
-$("#ryan")
-    .on("click", function (){
-        animateSection()
-        var charIndex = charArray.findIndex(x => x.name ==="ryan")
-        fillcharSection(charIndex)      
-    })
-$("#kelly")
-    .on("click", function (){
-        animateSection()
-        var charIndex = charArray.findIndex(x => x.name ==="kelly")
-        fillcharSection(charIndex)       
-})
-$("#stanley")
-    .on("click", function (){
-        animateSection()
-        var charIndex = charArray.findIndex(x => x.name ==="stanley")
-        fillcharSection(charIndex)       
-    })
-$("#phyllis")
-    .on("click", function (){
-        animateSection()
-        var charIndex = charArray.findIndex(x => x.name ==="phyllis")
-        fillcharSection(charIndex)  
-    })
-$("#oscar")
-    .on("click", function (){
-        animateSection()
-        var charIndex = charArray.findIndex(x => x.name ==="oscar")
-        fillcharSection(charIndex) 
-    })
-$("#meredith")
-    .on("click", function (){
-        animateSection()
-        var charIndex = charArray.findIndex(x => x.name ==="meredith")
-        fillcharSection(charIndex) 
-})
 
-$("#char-games").on("click", "li", function(){
-    console.log($(this).text())
-    console.log(savedGames)
+$("#char-games")
+    .on("mouseover", "img", function(){
+        $(this).css('border', '3px solid red')
+    })
+    .on("mouseout", "img", function(){
+        $(this).css('border', '')
+    })
+    .on("click", "li", function(){
+        console.log($(this).text())
+        console.log(savedGames)
 
-    $("#saved-videogames").show(200)
+        $("#saved-videogames").show(200)
 
-    var found = $.grep(savedGames, e => e.imgtext === $(this).text());
-    if (found.length > 0) {
-        console.log("Game Already Stored");
-    } else if (savedGames.length >= 5) {
-        console.log("Storage Full!")
-        $("#vgstorage-text").text("[Currently Full!]")
-    }   else {
-        $("#saved-list").append("<li class='column'><p><img src='"+$(this)[0].childNodes[0].childNodes[0].currentSrc+"' width='200'/><br /><span>"+$(this).text()+"<span></p></li>")
-    
-        var gamesEntry = {
-            imgsrc: $(this)[0].childNodes[0].childNodes[0].currentSrc,        
-            imgtext: $(this).text()
-        }
+        var found = $.grep(savedGames, e => e.imgtext === $(this).text());
+        if (found.length > 0) {
+            console.log("Game Already Stored");
+        } else if (savedGames.length >= 5) {
+            console.log("Storage Full!")
+            $("#vgstorage-text").text("[Currently Full!]")
+        }   else {
+            $("#saved-list").append("<li class='column'><p><img class='gameImg' src='"+$(this)[0].childNodes[0].childNodes[0].currentSrc+"' width='200'/><br /><span>"+$(this).text()+"<span></p></li>")
         
-        savedGames.push(gamesEntry)
-        savedGames.sort((a, b) => {return b.imgtext-a.imgtext})
-    
-        storeGameslocal()
-    }
+            var gamesEntry = {
+                imgsrc: $(this)[0].childNodes[0].childNodes[0].currentSrc,        
+                imgtext: $(this).text()
+            }
+            
+            savedGames.push(gamesEntry)
+            savedGames.sort((a, b) => {return b.imgtext-a.imgtext})
+        
+            storeGameslocal()
+        }
+    })
 
-})
+$("#saved-list")
+    .on("mouseover", "img", function(){
+        $(this).css({'border' : '3px solid red','cursor' : 'crosshair'})
+    })
+    .on("mouseout", "img", function(){
+        $(this).css('border', '')
+    })
+    .on("click", "li", function(){
+        console.log($(this).text())
+        console.log(savedGames)
+
+        var removeItem = $(this).text()
+        savedGames = $.grep(savedGames, function(value) {
+            return value.imgtext != removeItem;
+        });
+        console.log(savedGames)
+
+        $(this).closest('li').remove()
+        $("#vgstorage-text").empty()
+
+        storeGameslocal()
+
+        if (savedGames.length < 1) {
+            $("#saved-videogames").hide("fast")
+        }
+
+
+    })
 
 function renderGames(){
     $("#saved-list").empty()
