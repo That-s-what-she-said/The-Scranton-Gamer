@@ -2,33 +2,70 @@
     display: none;
 }
 
+body {
+    background-color: beige;
+}
+
 h1 {
     font-family: 'Rampart One', cursive;
 }
 
 h2,
-button {
+button,
+span {
     font-family: 'Press Start 2P', cursive;
 }
 
+figure,
 .gImg {
-    width: 400px;
+    cursor: crosshair;
 }
 
-#char-games{
+/* .gImg {
+    width: 400px;
+} */
+
+#char-games-section ul {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 #char-games li {
-    display: flex;
-    flex-direction: column;
+    width: 300px;
 }
 
-@media screen and (max-width: 800px) {
-    #char-games {
-      flex-direction: column;
+#char-details p {
+    padding: 0 10%;
+    text-align: left;
+}
+
+@media screen and (max-width: 1000px) {
+    #character-section {
+        display: flex;
+        flex-direction: column;
     }
+
+    #char-games-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #char-games {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .gImg{
+        display: flex;
+        justify-content: center;
+    }
+
+
+    #character-big-image {
+        display: flex;
+        justify-content: center;
+    }
+
   }
