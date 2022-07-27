@@ -5,9 +5,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
+  
+  ![Title](./assets/images/Screen%20Shot%202022-07-27%20at%202.03.22%20PM%20(2).jpg)
 
   <h3 align="center"><a href="https://that-s-what-she-said.github.io/The-Scranton-Gamer/">The Scranton Gamer</a></h3>
 
@@ -16,10 +15,17 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+<br>
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+<div align="center">
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..
+![landing](./assets/images/landing%20page.jpg)
+
+      Fans of the hit tv show “The Office” can use our app to see what video games the cast is playing!
+
+      When choosing a Character from "The Office", we can get a list of game recommendations based on the characters persona as well as some information on the actor who played the role!
+
+</div>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -27,7 +33,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+<!-- This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples. -->
 
 * [HTML](https://en.wikipedia.org/wiki/HTML)
 * [CSS](https://en.wikipedia.org/wiki/CSS)
@@ -49,12 +55,15 @@ This section should list any major frameworks/libraries used to bootstrap your p
 * Luis Jimenez (front-end: html/css/wireframes)
 * Nick Chirico (front-end: html/css/wireframes)
 
+<br>
 
 ## Project Name: The Scranton Gamer
 * Github Repo : https://github.com/That-s-what-she-said 
 * Wireframe : https://whimsical.com/PfDWPqcd7xEEyB3detKmBv 
-* Presentation : 
+* Presentation : https://docs.google.com/presentation/d/1cf_Rdf04BAhPUkfgHkFNR0161MkK7rtMniBxCtY0bSY/edit?usp=sharing
 
+<br>
+<br>
 
 ## The Pitch:
 
@@ -63,6 +72,8 @@ This section should list any major frameworks/libraries used to bootstrap your p
       Fans of the popular show, The Office, can now find video games based on the personality of their favorite character!
 
 </div>
+
+<br>
 
 ## Commitments as a project team:
 
@@ -73,10 +84,14 @@ This section should list any major frameworks/libraries used to bootstrap your p
   * Get input from the entire team before a decision is made. If this isn’t feasible, at least get input from key people.
   * Attack problems or issues – not the person. When at a roadblock, console.log(math.random…)
 
+<br>
+
 ## Things to Consider (If time allows):
 
  * Animation (Hover)
  * Add some Flare
+
+ <br>
 
 <!-- USAGE EXAMPLES -->
 ## Usage
@@ -87,12 +102,16 @@ This section should list any major frameworks/libraries used to bootstrap your p
 * Jim Halpert
 * Dwight Schrute
 * Stanley Hudson
+* Ryan Howard
+* Oscar Martinez
 * Angela Martin
 * Pam Beasly
 * Kelly Kapoor
 * Meredith Palmer
+* Jan Levinson
+* Phyllis Vance
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+<!-- _For more examples, please refer to the [Documentation](https://example.com)_ -->
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -102,9 +121,9 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 ## Roadmap
 
 - [x] Initialize readme
-- [ ] Add Working Agreement
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
+- [x] Add Working Agreement
+- [x] Add Additional Templates w/ Examples
+- [x] Add "components" document to easily copy & paste sections of the readme
 
 
 See the [open issues](https://github.com/That-s-what-she-said/The-Scranton-Gamer/issues) for a full list of proposed features (and known issues).
@@ -132,12 +151,9 @@ Project Link: [https://github.com/That-s-what-she-said/The-Scranton-Gamer](https
 
 Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
 
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
-* [Malven's Grid Cheatsheet](https://grid.malven.co/)
-* [Img Shields](https://shields.io)
-* [GitHub Pages](https://pages.github.com)
+* [Bulma](https://bulma.io/)
+* [Rawg Video Games](https://api.rawg.io/docs/)
+* [Movie Data Base](https://www.themoviedb.org/tv/2316-the-office)
 * [Font Awesome](https://fontawesome.com)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
