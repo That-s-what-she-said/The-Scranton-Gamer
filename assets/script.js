@@ -93,7 +93,7 @@ function getInitgame(charIndex){
         url:"https://api.rawg.io/api/games/" + charIndex + "?key=82f276f87ec44df988016fb8a6d23c76",
         method: "GET",
     }).then(function(results){
-        console.log(results)
+        // console.log(results)
 
         $('#char-games').prepend("<li ><p><img class='gameImg' src='" + results.background_image + "' width='200px'><br/><span>"+results.name+"</span></p></li>")
         
@@ -106,7 +106,7 @@ function getSimilargames(genreIndex){
             url:"https://rawg.io/api/games?page_size=3&genres=" + genreIndex + "&metacritic=80&key=82f276f87ec44df988016fb8a6d23c76",
             method: "GET",
         }).then(function(gamelist){
-            console.log(gamelist.results)
+            // console.log(gamelist.results)
     
             for (var i=0; i<3; i++){
                 $('#char-games').append("<li ><p><img class='gameImg' src='" + gamelist.results[i].background_image + "' width='200px'><br/><span>"+gamelist.results[i].name+"</span></p></li>")
@@ -119,7 +119,7 @@ function getDetails(castID){
         url:"https://api.themoviedb.org/3/person/" + castID + "?api_key=cd2339f965f5a11b2ea2c94d76b2b76f&language=en-US",
         method: "GET",
     }).then(function(results){
-        console.log(results)
+        // console.log(results)
 
         $("#char-details").append($("<h2 class='is-size-4 has-text-white'></h2>").text("Real Name: " + results.name))
         $("#char-details").append($("<p class='box py-3 mr-5'><strong>" + results.biography + "</strong></p>"))
@@ -204,16 +204,16 @@ $("#char-games")
         $(this).css('border', '')
     })
     .on("click", "li", function(){
-        console.log($(this).text())
-        console.log(savedGames)
+        // console.log($(this).text())
+        // console.log(savedGames)
 
         $("#saved-videogames").show(200)
 
         var found = $.grep(savedGames, e => e.imgtext === $(this).text());
         if (found.length > 0) {
-            console.log("Game Already Stored");
+            $("#vgstorage-text").text("Game Already Stored");
         } else if (savedGames.length >= 5) {
-            console.log("Storage Full!")
+            // console.log("Storage Full!")
             $("#vgstorage-text").text("[Currently Full!]")
         }   else {
             $("#saved-list").append("<li class='column'><p><img class='gameImg' src='"+$(this)[0].childNodes[0].childNodes[0].currentSrc+"' width='200'/><br /><span>"+$(this).text()+"<span></p></li>")
@@ -227,6 +227,10 @@ $("#char-games")
             savedGames.sort((a, b) => {return b.imgtext-a.imgtext})
         
             storeGameslocal()
+
+            $('html, body').animate({
+                scrollTop: $("#saved-videogames").offset().top
+              });
         }
     })
 
@@ -238,14 +242,14 @@ $("#saved-list")
         $(this).css('border', '')
     })
     .on("click", "li", function(){
-        console.log($(this).text())
-        console.log(savedGames)
+        // console.log($(this).text())
+        // console.log(savedGames)
 
         var removeItem = $(this).text()
         savedGames = $.grep(savedGames, function(value) {
             return value.imgtext != removeItem;
         });
-        console.log(savedGames)
+        // console.log(savedGames)
 
         $(this).closest('li').remove()
         $("#vgstorage-text").empty()
@@ -263,7 +267,7 @@ function renderGames(){
     $("#saved-list").empty()
     $("#saved-videogames").show(200)
 
-    console.log(savedGames)
+    // console.log(savedGames)
     if (savedGames.length < 1){
         $("#saved-videogames").hide()
     } else if (savedGames.length >= 5) {
