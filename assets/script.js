@@ -1,5 +1,3 @@
-var apiKeyInit = config.apiKeyInit
-var apiKeyDetails = config.apiKeyDetails
 
 var charArray = [
     {
@@ -91,7 +89,7 @@ var charArray = [
 function getInitgame(charIndex){
     // Pull First Game
     $.ajax({
-        url:"https://api.rawg.io/api/games/" + charIndex + "?key=" + apiKeyInit ,
+        url:"https://api.rawg.io/api/games/" + charIndex + "?key=82f276f87ec44df988016fb8a6d23c76",
         method: "GET",
     }).then(function(results){
         console.log(results)
@@ -105,7 +103,7 @@ function getInitgame(charIndex){
 function getSimilargames(genreIndex){
         // Pull 3 Similar Games 
         $.ajax({
-            url:"https://rawg.io/api/games?page_size=3&genres=" + genreIndex + "&metacritic=80&key=" + apiKeyInit,
+            url:"https://rawg.io/api/games?page_size=3&genres=" + genreIndex + "&metacritic=80&key=82f276f87ec44df988016fb8a6d23c76",
             method: "GET",
         }).then(function(gamelist){
             console.log(gamelist.results)
@@ -118,7 +116,7 @@ function getSimilargames(genreIndex){
 
 function getDetails(castID){
     $.ajax({
-        url:"https://api.themoviedb.org/3/person/" + castID + "?api_key=" + apiKeyDetails + "&language=en-US",
+        url:"https://api.themoviedb.org/3/person/" + castID + "?api_key=cd2339f965f5a11b2ea2c94d76b2b76f&language=en-US",
         method: "GET",
     }).then(function(results){
         console.log(results)
@@ -145,7 +143,6 @@ function changeImageBack() {
 
 function charFname(text){
     $("#char-details").append($("<h2></h2>").text(text))
-    // $("#char-details").append($("<p></p>").text('"This is a line reserved for a quote."'))
 }
 
 function charRname(text){
@@ -303,7 +300,6 @@ function initSavelist(){
 
     renderGames()
 }
-
 
 initSavelist()
 
