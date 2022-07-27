@@ -1,0 +1,4 @@
+let config = {
+    API_KEY_INITGAME : '82f276f87ec44df988016fb8a6d23c76',
+    API_KEY_DETAILS: 'cd2339f965f5a11b2ea2c94d76b2b76f'
+}
