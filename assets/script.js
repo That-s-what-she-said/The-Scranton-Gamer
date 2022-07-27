@@ -263,7 +263,7 @@ $("#char-games").on("click", "li", function(){
     console.log($(this))
 
     $("#saved-videogames").show(200)
-    $("#saved-list").append("<li class='column'><p><img src='"+$(this)[0].childNodes[0].childNodes[2].currentSrc+"' width='200'/><br />"+$(this).text()+"</p></li>")
+    $("#saved-list").append("<li class='column'><p><img src='"+$(this)[0].childNodes[0].childNodes[2].currentSrc +"' width='200'/><br />"+$(this).text()+"</p></li>")
     
     var gamesEntry = {
         imgsrc: $(this)[0].childNodes[0].childNodes[2].currentSrc,

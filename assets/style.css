@@ -2,7 +2,10 @@
     display: none;
 }
 
-h1 {
+
+h1::before,
+h1::after {
+    content: ' \1F3AE';
     font-family: 'Rampart One', cursive;
 }
 
@@ -56,20 +59,3 @@ button {
         justify-content: center;
     }
 
-    #char-games {
-        display: flex;
-        justify-content: center;
-    }
-    
-    .gImg{
-        display: flex;
-        justify-content: center;
-    }
-
-
-    #character-big-image {
-        display: flex;
-        justify-content: center;
-    }
-
-  }
