@@ -259,3 +259,56 @@ $("#meredith")
         fillcharSection(charIndex) 
 })
 
+var savedGames = []
+
+
+$("#char-games").on("click", "li", function(){
+    console.log($(this))
+
+    $("#saved-videogames").show(200)
+    $("#saved-list").append("<li class='column'><p><img src='"+$(this)[0].childNodes[0].childNodes[2].currentSrc+"' width='200'/><br />"+$(this).text()+"</p></li>")
+    
+    var gamesEntry = {
+        imgsrc: $(this)[0].childNodes[0].childNodes[2].currentSrc,
+        imgtext: $(this).text()
+    }
+    
+    savedGames.push(gamesEntry)
+    savedGames.sort((a, b) => {return b.imgtext-a.imgtext})
+
+    storeGameslocal()
+})
+
+function renderGames(){
+    $("#saved-list").empty()
+    $("#saved-videogames").show(200)
+
+    console.log(savedGames)
+    for (var i=0; i < savedGames.length; i++){
+        var sGame = savedGames[i]
+        $("#saved-list").append("<li class='column'><p><img src='"+sGame.imgsrc+"' width='200'/><br />"+sGame.imgtext+"</p></li>")
+    }
+}
+
+function initSavelist(){
+    if(localStorage.getItem("storedGames") === null){
+        localStorage.storedGames = "[]"
+    }
+
+    var storedGames = JSON.parse(localStorage.getItem("storedGames"))
+
+    if (storedGames !== null){
+        savedGames = storedGames
+    }
+
+    renderGames()
+}
+
+
+initSavelist()
+
+
+
+function storeGameslocal(){
+    localStorage.setItem("storedGames", JSON.stringify(savedGames))
+}
