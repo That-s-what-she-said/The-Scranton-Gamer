@@ -17,8 +17,17 @@ span {
 }
 
 figure,
-.gImg {
+.gameImg {
     cursor: crosshair;
+}
+
+.heroImg {
+    border-radius: 6px;
+}
+
+#char-games-section span {
+    margin-top: 10px;
+    font-size: smaller;
 }
 
 #char-games-section ul {
@@ -34,7 +43,9 @@ figure,
 #char-details p {
     padding: 0 10%;
     text-align: left;
-}
+    height: 480px;
+    overflow: auto;
+    background-color: bisque;
 
 @media screen and (max-width: 1000px) {
     #character-section {
@@ -62,6 +73,7 @@ figure,
     #character-big-image {
         display: flex;
         justify-content: center;
+        flex-direction: column;
     }
 
   }
