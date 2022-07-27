@@ -1,5 +1,5 @@
-var apiKeyInit = config.API_KEY_INITGAME
-var apiKeyDetails = config.API_KEY_DETAILS
+var apiKeyInit = config.apiKeyInit
+var apiKeyDetails = config.apiKeyDetails
 
 var charArray = [
     {
