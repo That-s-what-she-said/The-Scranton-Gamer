@@ -2,7 +2,10 @@
     display: none;
 }
 
-h1 {
+
+h1::before,
+h1::after {
+    content: ' \1F3AE';
     font-family: 'Rampart One', cursive;
 }
 
@@ -32,3 +35,4 @@ button {
       flex-direction: column;
     }
   }
+
